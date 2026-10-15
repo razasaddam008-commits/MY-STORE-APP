@@ -102,5 +102,40 @@
     <p>Rawalpindi, Pakistan</p>
     <p>Contact: Add your business phone number</p>
   </footer>
+<section id="order" style="padding:25px 15px;text-align:center;background:#181818;">
+  <h2 style="color:#00d9ff;">Place Your Online Order</h2>
+  <form id="orderForm" style="max-width:450px;margin:20px auto;text-align:left;">
+    <label>Your Name</label>
+    <input name="customer" required placeholder="Enter your name" style="width:100%;padding:12px;margin:8px 0 15px;">
+
+    <label>Mobile Number</label>
+    <input name="phone" type="tel" required placeholder="03XXXXXXXXX" style="width:100%;padding:12px;margin:8px 0 15px;">
+
+    <label>Product Name</label>
+    <input name="product" required placeholder="What do you want to buy?" style="width:100%;padding:12px;margin:8px 0 15px;">
+
+    <label>Quantity</label>
+    <input name="quantity" type="number" min="1" value="1" required style="width:100%;padding:12px;margin:8px 0 15px;">
+
+    <label>Delivery Address</label>
+    <textarea name="address" required placeholder="Enter your full address" style="width:100%;padding:12px;margin:8px 0 15px;"></textarea>
+
+    <button type="submit" style="width:100%;padding:14px;background:#00d9ff;border:0;font-weight:bold;cursor:pointer;">
+      Submit Order
+    </button>
+    <p id="orderMessage" style="margin-top:12px;"></p>
+  </form>
+</section>
+
+<script>
+document.getElementById("orderForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+  document.getElementById("orderMessage").textContent =
+    "Form ready, but online order sending is not connected yet. Please contact the shop to place your order.";
+});
+</script>
+</body>
+</html>
+
 </body>
 </html>
