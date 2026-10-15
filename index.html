@@ -4,191 +4,439 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RAZA BROTHERS SERVICE AND PARTS</title>
+  <title>RAZA BROTHERS | Service & Parts</title>
+  <meta name="description" content="RAZA BROTHERS Service and Parts - Washing machine, kitchen hood, electric stove and geyser spare parts in Rawalpindi, Pakistan.">
+
   <style>
-    * { box-sizing: border-box; }
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: Arial, sans-serif;
       background: #101010;
-      color: white;
+      color: #ffffff;
+      line-height: 1.6;
     }
+
     header {
       background: #181818;
       padding: 24px 15px;
       text-align: center;
       border-bottom: 2px solid #00d9ff;
     }
-    header h1 { color: #00d9ff; font-size: 25px; }
-    nav { margin-top: 20px; }
-    nav a {
-      color: white;
-      margin: 8px;
-      text-decoration: none;
+
+    header h1 {
+      color: #00d9ff;
+      font-size: 27px;
+      margin-bottom: 6px;
     }
-    .hero {
+
+    header p {
+      color: #dddddd;
+    }
+
+    nav {
+      background: #202020;
+      padding: 12px;
       text-align: center;
-      padding: 55px 20px;
     }
-    .hero h2 { color: #00d9ff; }
+
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      margin: 0 12px;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #00d9ff;
+    }
+
+    .hero {
+      padding: 45px 18px;
+      text-align: center;
+      background: linear-gradient(135deg, #151515, #222222);
+    }
+
+    .hero h2 {
+      font-size: 28px;
+      color: #00d9ff;
+      margin-bottom: 12px;
+    }
+
+    .hero p {
+      color: #dddddd;
+      max-width: 650px;
+      margin: 0 auto 20px;
+    }
+
     .btn {
       display: inline-block;
       background: #00d9ff;
       color: #101010;
-      padding: 12px 20px;
+      padding: 12px 22px;
+      border: none;
       border-radius: 6px;
-      text-decoration: none;
       font-weight: bold;
+      text-decoration: none;
+      cursor: pointer;
     }
+
+    .btn:hover {
+      background: #00b7d9;
+    }
+
+    section {
+      padding: 35px 18px;
+      max-width: 1050px;
+      margin: auto;
+    }
+
+    .section-title {
+      text-align: center;
+      color: #00d9ff;
+      margin-bottom: 24px;
+      font-size: 25px;
+    }
+
     .products {
-      padding: 25px 15px;
-      text-align: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 18px;
     }
-    .product {
-      display: inline-block;
-      background: #202020;
-      border: 1px solid #333;
+
+    .product-card {
+      background: #1c1c1c;
+      border: 1px solid #333333;
       border-radius: 10px;
-      padding: 22px;
-      margin: 8px;
-      width: 240px;
-      max-width: 100%;
-    }
-    footer {
-      padding: 20px;
+      padding: 22px 15px;
       text-align: center;
-      color: #bbb;
+    }
+
+    .product-icon {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .product-card h3 {
+      color: #00d9ff;
+      margin-bottom: 8px;
+    }
+
+    .product-card p {
+      color: #cccccc;
+      font-size: 14px;
+    }
+
+    .order-box {
+      max-width: 600px;
+      margin: auto;
+      background: #1c1c1c;
+      padding: 22px;
+      border-radius: 10px;
+      border: 1px solid #333333;
+    }
+
+    .order-box label {
+      display: block;
+      margin: 13px 0 5px;
+      color: #eeeeee;
+    }
+
+    .order-box input,
+    .order-box select,
+    .order-box textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #444444;
+      border-radius: 5px;
+      background: #101010;
+      color: #ffffff;
+      font-size: 15px;
+    }
+
+    .order-box textarea {
+      min-height: 85px;
+      resize: vertical;
+    }
+
+    .order-box .btn {
+      width: 100%;
+      margin-top: 18px;
+      font-size: 16px;
+    }
+
+    #message {
+      margin-top: 15px;
+      overflow-wrap: anywhere;
+      font-size: 14px;
+    }
+
+    .contact {
+      text-align: center;
       background: #181818;
-      margin-top: 30px;
+      border-radius: 10px;
+    }
+
+    .contact p {
+      margin: 8px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 12px;
+      color: #bbbbbb;
+      background: #181818;
+      margin-top: 25px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 480px) {
+      header h1 {
+        font-size: 22px;
+      }
+
+      .hero h2 {
+        font-size: 23px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 4px 7px;
+      }
     }
   </style>
 </head>
+
 <body>
+
   <header>
     <h1>RAZA BROTHERS</h1>
-    <p>SERVICE AND PARTS</p>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#products">Products</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <p>Service &amp; Spare Parts</p>
+    <p>Rawalpindi, Pakistan</p>
   </header>
 
-  <section class="hero" id="home">
-    <h2>Welcome to Raza Brothers</h2>
-    <p>Home Appliances & Spare Parts</p>
-    <p>Quality Products • Trusted Service</p>
-    <a class="btn" href="#products">View Products</a>
-  </section>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#products">Parts Categories</a>
+    <a href="#order">Place Order</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <section class="products" id="products">
-    <h2>Our Products</h2>
-    <div class="product">
-      <h3>Home Appliances</h3>
-      <p>Quality appliances for your home.</p>
+  <main>
+    <div class="hero" id="home">
+      <h2>Welcome to RAZA BROTHERS</h2>
+      <p>
+        Spare parts for washing machines, kitchen hoods,
+        electric stoves and geysers.
+        Contact us to ask about availability and prices.
+      </p>
+      <a class="btn" href="#order">Place Your Order</a>
     </div>
-    <div class="product">
-      <h3>Spare Parts</h3>
-      <p>Parts for home appliance repairs.</p>
-    </div>
-    <div class="product">
-      <h3>Online Orders</h3>
-      <p>Contact us to place your order.</p>
-    </div>
-  </section>
 
-  <footer id="contact">
-    <p>RAZA BROTHERS SERVICE AND PARTS</p>
-    <p>Rawalpindi, Pakistan</p>
-    <p>Contact: Add your business phone number</p>
+    <section id="products">
+      <h2 class="section-title">Our Parts Categories</h2>
+
+      <div class="products">
+        <div class="product-card">
+          <div class="product-icon">🧺</div>
+          <h3>Washing Machine Parts</h3>
+          <p>Ask us about available spare parts and prices.</p>
+        </div>
+
+        <div class="product-card">
+          <div class="product-icon">💨</div>
+          <h3>Kitchen Hood Parts</h3>
+          <p>Ask us about available spare parts and prices.</p>
+        </div>
+
+        <div class="product-card">
+          <div class="product-icon">♨️</div>
+          <h3>Electric Stove Parts</h3>
+          <p>Ask us about available spare parts and prices.</p>
+        </div>
+
+        <div class="product-card">
+          <div class="product-icon">🚿</div>
+          <h3>Geyser Parts</h3>
+          <p>Ask us about available spare parts and prices.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="order">
+      <h2 class="section-title">Place Your Order</h2>
+
+      <div class="order-box">
+        <form id="orderForm">
+          <label for="customer">Your Name</label>
+          <input id="customer" name="customer" type="text"
+                 autocomplete="name" required>
+
+          <label for="phone">Mobile Number</label>
+          <input id="phone" name="phone" type="tel"
+                 autocomplete="tel" required>
+
+          <label for="product">Select Parts Category</label>
+          <select id="product" name="product" required>
+            <option value="">-- Select Category --</option>
+            <option value="Washing Machine Parts">Washing Machine Parts</option>
+            <option value="Kitchen Hood Parts">Kitchen Hood Parts</option>
+            <option value="Electric Stove Parts">Electric Stove Parts</option>
+            <option value="Geyser Parts">Geyser Parts</option>
+          </select>
+
+          <label for="details">Part Name / Details</label>
+          <input id="details" name="details" type="text"
+                 placeholder="Enter the part you need" required>
+
+          <label for="quantity">Quantity</label>
+          <input id="quantity" name="quantity" type="number"
+                 min="1" step="1" value="1" required>
+
+          <label for="address">Delivery Address</label>
+          <textarea id="address" name="address"
+                    autocomplete="street-address" required></textarea>
+
+          <button class="btn" id="submitBtn" type="submit">
+            Submit Order
+          </button>
+
+          <p id="message" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2 class="section-title">Contact Us</h2>
+      <p><strong>Business:</strong> RAZA BROTHERS SERVICE AND PARTS</p>
+      <p><strong>Location:</strong> Rawalpindi, Pakistan</p>
+      <p><strong>WhatsApp:</strong> 0302 4921024</p>
+      <a class="btn"
+         href="https://wa.me/923024921024"
+         target="_blank" rel="noopener">
+        Chat on WhatsApp
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> RAZA BROTHERS SERVICE AND PARTS</p>
+    <p>All rights reserved.</p>
   </footer>
-<section id="order" style="padding:25px 15px;text-align:center;background:#181818;">
-  <h2 style="color:#00d9ff;">Place Your Online Order</h2>
-  <form id="orderForm" style="max-width:450px;margin:20px auto;text-align:left;">
-    <label>Your Name</label>
-    <input name="customer" required placeholder="Enter your name" style="width:100%;padding:12px;margin:8px 0 15px;">
 
-    <label>Mobile Number</label>
-    <input name="phone" type="tel" required placeholder="03XXXXXXXXX" style="width:100%;padding:12px;margin:8px 0 15px;">
+  <!-- Supabase library -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-    <label>Product Name</label>
-    <input name="product" required placeholder="What do you want to buy?" style="width:100%;padding:12px;margin:8px 0 15px;">
+  <script>
+    // STEP 1: Replace both values with your Supabase project details.
+    const SUPABASE_URL = "RAZA PARTS STORE";
+    const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_UXENgj4TomAbbfK2-71pXQ_bNEeDO5W";
+    const WHATSAPP_NUMBER = "923024921024";
 
-    <label>Quantity</label>
-    <input name="quantity" type="number" min="1" value="1" required style="width:100%;padding:12px;margin:8px 0 15px;">
+    let supabaseClient = null;
 
-    <label>Delivery Address</label>
-    <textarea name="address" required placeholder="Enter your full address" style="width:100%;padding:12px;margin:8px 0 15px;"></textarea>
-
-    <button type="submit" style="width:100%;padding:14px;background:#00d9ff;border:0;font-weight:bold;cursor:pointer;">
-      Submit Order
-    </button>
-    <p id="orderMessage" style="margin-top:12px;"></p>
-  </form>
-</section>
-
-<script>
-document.getElementById("orderForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-  document.getElementById("orderMessage").textContent =
-    "Form ready, but online order sending is not connected yet. Please contact the shop to place your order.";
-});
-</script>
-</body>
-</html>
-
-<script>
-document.getElementById("orderForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const form = new FormData(this);
-  const message =
-    "NEW ONLINE ORDER - RAZA BROTHERS%0A" +
-    "Customer: " + encodeURIComponent(form.get("customer")) + "%0A" +
-    "Phone: " + encodeURIComponent(form.get("phone")) + "%0A" +
-    "Product: " + encodeURIComponent(form.get("product")) + "%0A" +
-    "Quantity: " + encodeURIComponent(form.get("quantity")) + "%0A" +
-    "Address: " + encodeURIComponent(form.get("address"));
-
-  window.open(
-    "https://wa.me/923024921024?text=" + message,
-    "_blank"
-  );
-});
-</script>
-</body>
-</html>
-
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script>
-  const SUPABASE_URL = "RAZA_PARTS-STORE";
-  const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_UXENgj4TomAbbfK2-71pXQ_bNEeDO5W";
-
-  const supabaseClient = window.supabase.createClient(
-    SUPABASE_URL,
-    SUPABASE_PUBLISHABLE_KEY
-  );
-
-  document.getElementById("orderForm").addEventListener("submit", async function () {
-    const form = new FormData(this);
-
-    const { error } = await supabaseClient
-      .from("online_orders")
-      .insert([{
-        customer_name: form.get("customer"),
-        phone: form.get("phone"),
-        product_name: form.get("product"),
-        quantity: Number(form.get("quantity")),
-        delivery_address: form.get("address")
-      }]);
-
-    if (error) {
-      alert("Order database mein save nahi hua. Dobara check karein.");
-    } else {
-      alert("Order database mein save ho gaya!");
+    if (
+      window.supabase &&
+      SUPABASE_URL.startsWith("https://") &&
+      !SUPABASE_URL.includes("PASTE_YOUR") &&
+      SUPABASE_PUBLISHABLE_KEY &&
+      !SUPABASE_PUBLISHABLE_KEY.includes("PASTE_YOUR")
+    ) {
+      supabaseClient = window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+      );
     }
-  });
-</script>
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    document.getElementById("orderForm").addEventListener(
+      "submit",
+      async function (event) {
+        event.preventDefault();
+
+        const button = document.getElementById("submitBtn");
+        const message = document.getElementById("message");
+
+        const customer = document.getElementById("customer").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const product = document.getElementById("product").value;
+        const details = document.getElementById("details").value.trim();
+        const quantity = Number(document.getElementById("quantity").value);
+        const address = document.getElementById("address").value.trim();
+
+        if (!customer || !phone || !product || !details ||
+            !address || !Number.isInteger(quantity) || quantity < 1) {
+          message.textContent = "Please complete all fields correctly.";
+          return;
+        }
+
+        const whatsappText =
+          "RAZA BROTHERS - New Order\n" +
+          "Name: " + customer + "\n" +
+          "Phone: " + phone + "\n" +
+          "Category: " + product + "\n" +
+          "Part Details: " + details + "\n" +
+          "Quantity: " + quantity + "\n" +
+          "Address: " + address;
+
+        const whatsappURL =
+          "https://wa.me/" + WHATSAPP_NUMBER +
+          "?text=" + encodeURIComponent(whatsappText);
+
+        button.disabled = true;
+        button.textContent = "Submitting...";
+        message.textContent = "Please wait while we submit your order.";
+
+        if (!supabaseClient) {
+          message.textContent =
+            "Supabase is not configured. Opening WhatsApp as an alternative.";
+          window.location.href = whatsappURL;
+          button.disabled = false;
+          button.textContent = "Submit Order";
+          return;
+        }
+
+        try {
+          // These column names must match your online_orders table.
+          const { error } = await supabaseClient
+            .from("online_orders")
+            .insert([{
+              customer_name: customer,
+              phone: phone,
+              product_name: product + " - " + details,
+              quantity: quantity,
+              address: address
+            }]);
+
+          if (error) {
+            throw error;
+          }
+
+          message.textContent =
+            "Order saved successfully! Thank you. We will contact you.";
+          document.getElementById("orderForm").reset();
+
+        } catch (error) {
+          console.error("Order submission failed:", error);
+
+          message.textContent =
+            "The order could not be saved. Opening WhatsApp so you can send it instead.";
+
+          window.location.href = whatsappURL;
+
+        } finally {
+          button.disabled = false;
+          button.textContent = "Submit Order";
+        }
+      }
+    );
+  </script>
 
 </body>
 </html>
