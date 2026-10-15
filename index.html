@@ -159,5 +159,36 @@ document.getElementById("orderForm").addEventListener("submit", function(e) {
 </body>
 </html>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const SUPABASE_URL = "RAZA_PARTS-STORE";
+  const SUPABASE_PUBLISHABLE_KEY = "sb_publishable_UXENgj4TomAbbfK2-71pXQ_bNEeDO5W";
+
+  const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY
+  );
+
+  document.getElementById("orderForm").addEventListener("submit", async function () {
+    const form = new FormData(this);
+
+    const { error } = await supabaseClient
+      .from("online_orders")
+      .insert([{
+        customer_name: form.get("customer"),
+        phone: form.get("phone"),
+        product_name: form.get("product"),
+        quantity: Number(form.get("quantity")),
+        delivery_address: form.get("address")
+      }]);
+
+    if (error) {
+      alert("Order database mein save nahi hua. Dobara check karein.");
+    } else {
+      alert("Order database mein save ho gaya!");
+    }
+  });
+</script>
+
 </body>
 </html>
