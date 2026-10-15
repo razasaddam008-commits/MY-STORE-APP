@@ -137,5 +137,27 @@ document.getElementById("orderForm").addEventListener("submit", function(e) {
 </body>
 </html>
 
+<script>
+document.getElementById("orderForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const form = new FormData(this);
+  const message =
+    "NEW ONLINE ORDER - RAZA BROTHERS%0A" +
+    "Customer: " + encodeURIComponent(form.get("customer")) + "%0A" +
+    "Phone: " + encodeURIComponent(form.get("phone")) + "%0A" +
+    "Product: " + encodeURIComponent(form.get("product")) + "%0A" +
+    "Quantity: " + encodeURIComponent(form.get("quantity")) + "%0A" +
+    "Address: " + encodeURIComponent(form.get("address"));
+
+  window.open(
+    "https://wa.me/923024921024?text=" + message,
+    "_blank"
+  );
+});
+</script>
+</body>
+</html>
+
 </body>
 </html>
